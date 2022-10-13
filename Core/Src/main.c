@@ -218,9 +218,11 @@ void SET_LED(double f)
 
   LED_OFF(LED8_Port, LED8_Pin);
 
+  // Don't set LED if a rest
   if (f == REST_FREQ) return;
 
   // Turn on new LED depending on note
+  // Sharp notes will also turn on LED 8
   if (f == C0 || f == C1 || f == C2 || f == C3 || f == C4 || f == C5 || f == C6 || f == C7 || f == C8){
     LED_ON(LED1_Port, LED1_Pin);
     LED = 1;
